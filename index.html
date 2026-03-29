@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Raghav | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:#0f172a;
+  color:#fff;
+  scroll-behavior:smooth;
+}
+
+/* NAVBAR */
+nav{
+  display:flex;
+  justify-content:space-between;
+  padding:20px 40px;
+  position:sticky;
+  top:0;
+  background:#0f172a;
+  z-index:1000;
+}
+
+nav h2{color:#38bdf8;}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  margin-left:20px;
+}
+
+/* HERO */
+.hero{
+  height:90vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+
+.hero h1{
+  font-size:50px;
+}
+
+.hero span{
+  color:#38bdf8;
+}
+
+.hero p{
+  margin-top:10px;
+  color:#94a3b8;
+}
+
+/* BUTTON */
+.btn{
+  margin-top:20px;
+  padding:10px 20px;
+  background:#38bdf8;
+  border:none;
+  border-radius:8px;
+  color:black;
+  cursor:pointer;
+}
+
+/* PROJECTS */
+.projects{
+  padding:60px 40px;
+}
+
+.projects h2{
+  text-align:center;
+  margin-bottom:40px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.card{
+  background:#1e293b;
+  padding:20px;
+  border-radius:15px;
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-10px) scale(1.02);
+}
+
+.card h3{margin-bottom:10px;}
+.card p{color:#cbd5f5;}
+
+.card a{
+  display:inline-block;
+  margin-top:10px;
+  color:#38bdf8;
+  text-decoration:none;
+}
+
+/* SKILLS */
+.skills{
+  padding:60px;
+  text-align:center;
+}
+
+.skill-bar{
+  background:#1e293b;
+  margin:10px auto;
+  width:80%;
+  border-radius:10px;
+}
+
+.skill-fill{
+  background:#38bdf8;
+  padding:10px;
+  border-radius:10px;
+}
+
+/* CONTACT */
+.contact{
+  padding:60px;
+  text-align:center;
+}
+
+input, textarea{
+  width:80%;
+  margin:10px;
+  padding:10px;
+  border:none;
+  border-radius:8px;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:20px;
+  color:#94a3b8;
+}
+
+/* ANIMATION */
+.fade{
+  opacity:0;
+  transform:translateY(30px);
+  transition:0.8s;
+}
+
+.show{
+  opacity:1;
+  transform:translateY(0);
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+  <h2>Raghav</h2>
+  <div>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Hi, I'm <span>Raghav</span></h1>
+  <p>B.Tech Student | Web Developer | Building Real Projects 🚀</p>
+  <button class="btn" onclick="scrollToProjects()">View My Work</button>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="projects fade">
+  <h2>My Projects</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>Study Setup Website</h3>
+      <p>Affiliate-based website for study setups and productivity tools.</p>
+      <a href="#">View</a>
+    </div>
+
+    <div class="card">
+      <h3>Portfolio Website</h3>
+      <p>Personal portfolio showcasing my work.</p>
+      <a href="#">View</a>
+    </div>
+
+    <div class="card">
+      <h3>Coming Soon</h3>
+      <p>More advanced projects coming soon.</p>
+      <a href="#">View</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="skills fade">
+  <h2>My Skills</h2>
+
+  <div class="skill-bar"><div class="skill-fill" style="width:85%">C++</div></div>
+  <div class="skill-bar"><div class="skill-fill" style="width:80%">C</div></div>
+  <div class="skill-bar"><div class="skill-fill" style="width:75%">HTML</div></div>
+
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact fade">
+  <h2>Contact Me</h2>
+  <input type="text" placeholder="Your Name"><br>
+  <input type="email" placeholder="Your Email"><br>
+  <textarea placeholder="Message"></textarea><br>
+  <button class="btn">Send</button>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Raghav | Built with 💻</p>
+</footer>
+
+<script>
+function scrollToProjects(){
+  document.getElementById("projects").scrollIntoView({behavior:"smooth"});
+}
+
+// ANIMATION ON SCROLL
+const elements = document.querySelectorAll('.fade');
+
+window.addEventListener('scroll', () => {
+  elements.forEach(el => {
+    const position = el.getBoundingClientRect().top;
+    const screen = window.innerHeight;
+
+    if(position < screen - 100){
+      el.classList.add('show');
+    }
+  });
+});
+</script>
+
+</body>
+</html>
