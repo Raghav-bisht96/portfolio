@@ -222,13 +222,12 @@ footer{
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="contact fade">
-  <h2>Contact Me</h2>
-  <input type="text" placeholder="Your Name"><br>
-  <input type="email" placeholder="Your Email"><br>
-  <textarea placeholder="Message"></textarea><br>
-  <button class="btn">Send</button>
-</section>
+<form action="https://formspree.io/f/mvzvkwyy" method="POST">
+  <input type="text" name="name" placeholder="Your Name" required><br>
+  <input type="email" name="email" placeholder="Your Email" required><br>
+  <textarea name="message" placeholder="Message" required></textarea><br>
+  <button class="btn" type="submit">Send</button>
+</form>
 
 <!-- FOOTER -->
 <footer>
